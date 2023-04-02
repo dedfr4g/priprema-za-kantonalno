@@ -6,7 +6,6 @@ using namespace std;
 int main()
 {
 	int n;
-	int novac = 10;
 	cin >> n;
 	vector<float> cijenabtc(n);
 	for (int u=0; u < n; u++)
@@ -22,7 +21,6 @@ int main()
 		float trebanaci = prvanajmanja;
 		auto it = find(cijenabtc.begin(), cijenabtc.end(), trebanaci);
 		__int64 index = distance(cijenabtc.begin(), it);
-
 		auto startaj = next(cijenabtc.begin(), index);
 		float najveci = *max_element(startaj, cijenabtc.end() - 1);
 		float drugikorak = najveci * prvikorak;
