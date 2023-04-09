@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
+// NIJE ZAVRSEN
 int main()
 {
 	int suma = 0;
