@@ -1,49 +1,32 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 int main()
 {
 	int r, k;
 	cin >> r >> k;
-	int prvi, drugi, treci;
-	string prvarijec, drugarijec, trecarijec;
-	cin >> prvi >> prvarijec;
-	cin >> drugi >> drugarijec;
-	cin >> treci >> trecarijec;
-	if (prvarijec == "stupaca")
+	string rijec;
+	int broj;
+	vector<int>skladistenje(3);
+	for (int i = 0; i < 3; i++)
 	{
-		k = k - prvi;
-		prvi = r * prvi;
-	}
-	if (prvarijec == "redova")
-	{
-		r = r - prvi;
-		prvi = k * prvi;
-	}
-	if (drugarijec == "stupaca")
-	{
-		k = k - drugi;
-		drugi = r * drugi;
-	}
-	if (drugarijec == "redova")
-	{
-		r = r - drugi;
-		drugi = k * drugi;
-	}if (trecarijec == "stupaca")
-	{
-		k = k - treci;
-		treci = r * treci;
-	}
-	if (trecarijec == "redova")
-	{
-		r = r - treci;
-		treci = k * treci;
+		cin >> broj >> rijec;
+		if (rijec == "stupaca")
+		{
+			k = k - broj;
+			skladistenje.insert(skladistenje.begin(), r * broj);
+		}
+		else
+		{
+			r = r - broj;
+			skladistenje.insert(skladistenje.begin(), k * broj);
+		}
 	}
 	cout << " " << endl;
-	cout << prvi << endl;
-	cout << drugi << endl;
-	cout << treci << endl;
-	
-	
+	for (int i = 2; i >= 0; i--)
+	{
+		cout << skladistenje[i] << endl;
+	}
 	return 0;
 }
